@@ -1,4 +1,4 @@
-# LITA_CAPSTONE-PROJECT
+n# LITA_CAPSTONE-PROJECT
 This is a documentation of my final project while learning Data Analysis at Incubator Hub.
 
 ## PROJECT 1:  Sales Performance Analysis for a Retail Store
@@ -29,6 +29,8 @@ The data was explored to answer some questions such as;
 ### Data Analysis
 
 - ### Microsoft Excel
+
+
 - ### SQL
 ``` SQL
 SELECT * FROM TABLE 1

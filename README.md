@@ -37,3 +37,4 @@ SELECT * FROM TABLE 1
   WHERE CONDITION = TRUE
 ```
 
+![image](https://github.com/user-attachments/assets/2bb17a15-3eac-408e-b372-e10cdb6e512c)

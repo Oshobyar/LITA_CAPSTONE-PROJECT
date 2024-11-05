@@ -29,12 +29,13 @@ The data was explored to answer some questions such as;
 ### Data Analysis
 
 - ### Microsoft Excel
-
+![Screenshot 2024-11-05 222415](https://github.com/user-attachments/assets/09e0da2f-16a9-48e6-801b-f566c043d472)
+![image](https://github.com/user-attachments/assets/2bb17a15-3eac-408e-b372-e10cdb6e512c)
+![image](https://github.com/user-attachments/assets/4a416d72-21a4-49ad-ade7-70074c375301)
+![image](https://github.com/user-attachments/assets/e6b93b81-56ef-4bc8-9b96-8dd21da13053)
 
 - ### SQL
 ``` SQL
 SELECT * FROM TABLE 1
   WHERE CONDITION = TRUE
 ```
-
-![image](https://github.com/user-attachments/assets/2bb17a15-3eac-408e-b372-e10cdb6e512c)

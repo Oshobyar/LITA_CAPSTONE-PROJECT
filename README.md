@@ -26,4 +26,12 @@ The data was explored to answer some questions such as;
 2. How do the regions perform
 3. What is the monthly sales trend
 
+### Data Analysis
+
+- ### Microsoft Excel
+- ### SQL
+``` SQL
+SELECT * FROM TABLE 1
+  WHERE CONDITION = TRUE
+```
 

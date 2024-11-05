@@ -13,5 +13,17 @@ The data used was downloaded from Canvas LMS of the LITA Data Analysis class org
 - Microsoft Excel: Data Cleaning, Analysis and Visualization [Download Here](https://www.microsoft.com)
 - SQL- Structured Query Language: Querying of Data
 - PowerBI: Data Modelling and Visualization
+- GitHub: Portfolio Building
+
+### Data Cleaning and Preparations
+To clean and prepare the data for analysis, the following actions were performed;
+1. Data loading and inspection
+2. Duplicate removing
+
+### Exploratory Data Analysis
+The data was explored to answer some questions such as;
+1. What are the top-selling products
+2. How do the regions perform
+3. What is the monthly sales trend
 
 

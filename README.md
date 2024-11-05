@@ -11,9 +11,9 @@ The data used was downloaded from Canvas LMS of the LITA Data Analysis class org
 
 ### TOOLS USED
 - Microsoft Excel: Data Cleaning, Analysis and Visualization [Download Here](https://www.microsoft.com)
-- SQL- Structured Query Language: Querying of Data
-- PowerBI: Data Modelling and Visualization
-- GitHub: Portfolio Building
+- SQL- Structured Query Language: Querying of Data [Download Here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+- PowerBI: Data Modelling and Visualization [Download Here](https://www.microsoft./power-bi/downloads)
+- GitHub: Portfolio Building [Sign up](https://github.com/)
 
 ### Data Cleaning and Preparations
 To clean and prepare the data for analysis, the following actions were performed;
@@ -27,15 +27,75 @@ The data was explored to answer some questions such as;
 3. What is the monthly sales trend
 
 ### Data Analysis
-
 - ### Microsoft Excel
 ![Screenshot 2024-11-05 222415](https://github.com/user-attachments/assets/09e0da2f-16a9-48e6-801b-f566c043d472)
-![image](https://github.com/user-attachments/assets/2bb17a15-3eac-408e-b372-e10cdb6e512c)
-![image](https://github.com/user-attachments/assets/4a416d72-21a4-49ad-ade7-70074c375301)
-![image](https://github.com/user-attachments/assets/e6b93b81-56ef-4bc8-9b96-8dd21da13053)
 
-- ### SQL
+![image](https://github.com/user-attachments/assets/83b9944d-9982-4281-b27b-5110661e4b20)
+ 
+![image](https://github.com/user-attachments/assets/9a35f3d9-54fa-4f73-bb44-e054f1895980)
+
+``` EXCEL FORMULA
+AVERAGE SALES PER PRODUCT
+Gloves = AVERAGEIF(C2:D9922, "Gloves", H2:H9922)
+Hat    = AVERAGEIF(C2:D9922, "Hat", H2:H9922)
+Jacket = AVERAGEIF(C2:D9922, "Jacket", H2:H9922)
+Shirt  = AVERAGEIF(C2:D9922, "Shirt", H2:H9922)
+Shoes  = AVERAGEIF(C2:D9922, "Shoes", H2:H9922)
+Socks  = AVERAGEIF(C2:D9922, "Socks", H2:H9922)
+
+TOTAL REVENUE BY REGION
+NORTH = SUMIF(D2:D9922,"North",H2:H9922)
+SOUTH = SUMIF(D2:D9922,"South",H2:H9922)
+EAST  = SUMIF(D2:D9922,"East",H2:H9922)
+WEST  = SUMIF(D2:D9922,"West",H2:H9922)
+```
+- ### SQL QUERIES
 ``` SQL
-SELECT * FROM TABLE 1
-  WHERE CONDITION = TRUE
+SELECT * FROM [dbo].[Sales_Data]
+
+-----Retrieve the total sales for each product category--------
+SELECT PRODUCT, SUM(Total_Sales) as TotalSales
+   FROM Sales_Data
+     GROUP BY PRODUCT
+
+--------find the number of sales transactions in each region-------
+SELECT REGION, COUNT(OrderID) as Num_of_SaleTransaction
+   FROM Sales_Data
+     GROUP BY REGION
+
+-----find the highest-selling product by total sales value------
+SELECT top (1) PRODUCT, SUM(Total_Sales) as TotalSales
+   FROM Sales_Data
+     GROUP BY PRODUCT
+	 
+--------calculate total revenue per product----------
+SELECT PRODUCT, SUM(Total_Sales) as TotalRevenue
+   FROM Sales_Data
+	GROUP BY PRODUCT
+
+--------calculate monthly sales totals for the current year-----------
+SELECT Month(OrderDate) AS Month,
+    SUM(Total_Sales) AS MonthlySalesTotal
+      FROM Sales_Data WHERE YEAR(OrderDate) = 2024
+       GROUP BY Month(OrderDate)
+         ORDER BY Month
+
+---------find the top 5 customers by total purchase amount--------
+SELECT TOP (5) Customer_Id, SUM (Total_Sales) as TotalPurchaseAmount
+  FROM Sales_Data
+    GROUP BY Customer_Id
+	 ORDER BY SUM(Total_Sales) desc
+
+-------calculate the percentage of total sales contributed by each region-------
+SELECT Region, SUM(Total_Sales) AS RegionTotalSales,
+FORMAT(ROUND((SUM(Total_Sales) / CAST((SELECT SUM(Total_Sales) FROM Sales_Data) AS DECIMAL(10,2)) * 100), 1), '0.#') 
+AS PercentageOfTotalSales
+FROM sales_data
+GROUP BY Region
+---------identify products with no sales in the last quarter------
+SELECT PRODUCT FROM Sales_Data
+GROUP BY Product
+HAVING SUM(CASE 
+WHEN OrderDate BETWEEN '2024-06-01' AND '2024-08-31' 
+THEN 1 ELSE 0 END) = 0
 ```

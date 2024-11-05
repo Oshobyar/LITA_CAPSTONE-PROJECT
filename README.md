@@ -4,13 +4,14 @@ This is a documentation of my final project while learning Data Analysis at Incu
 ## PROJECT 1:  Sales Performance Analysis for a Retail Store
 
 ### PROJECT OVERVIEW
-This project aims to analyze the sales performance of a retail store. I want to uncover key insights such as top-selling products, regional performance, and monthly sales trends. The goal is to produce an in
-You will need to explore sales data to uncover key insights such as top-selling products, regional 
-performance, and monthly sales trends. The goal is to produce an interactive Power BI 
-dashboard that highlights these findings.
+This project aims to analyze the sales performance of a retail store over the past two years. By analyzing various parameters in the data set, we seek to uncover key insights such as top-selling products, regional performance, and monthly sales trends.
 
 ### DATA SOURCES
+The data used was downloaded from Canvas LMS of the LITA Data Analysis class organized by the Incubator Hub
 
 ### TOOLS USED
+- Microsoft Excel: Data Cleaning, Analysis and Visulisation
+- SQL- Structured Query Language: Querying of Data
+- PowerBI 
 
 

@@ -10,8 +10,8 @@ This project aims to analyze the sales performance of a retail store over the pa
 The data used was downloaded from Canvas LMS of the LITA Data Analysis class organized by the Incubator Hub
 
 ### TOOLS USED
-- Microsoft Excel: Data Cleaning, Analysis and Visulisation
+- Microsoft Excel: Data Cleaning, Analysis and Visualization [Download Here](https://www.microsoft.com)
 - SQL- Structured Query Language: Querying of Data
-- PowerBI 
+- PowerBI: Data Modelling and Visualization
 
 
